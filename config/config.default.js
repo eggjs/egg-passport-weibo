@@ -1,9 +1,7 @@
 'use strict';
 
-exports.passport = {
-  weibo: {
-    clientID: '',
-    clientSecret: '',
-    callbackURL: '/passport/weibo/callback',
-  },
+exports.passportWeibo = {
+  key: '',
+  secret: '',
+  callbackURL: '/passport/weibo/callback',
 };
