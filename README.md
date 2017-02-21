@@ -20,9 +20,7 @@
 [download-image]: https://img.shields.io/npm/dm/egg-passport-weibo.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-passport-weibo
 
-<!--
-Description here.
--->
+weibo passport plugin for egg
 
 ## Install
 
@@ -33,8 +31,8 @@ $ npm i egg-passport-weibo --save
 ## Usage
 
 ```js
-// {app_root}/config/plugin.js
-exports.passport-weibo = {
+// config/plugin.js
+exports.passportWeibo = {
   enable: true,
   package: 'egg-passport-weibo',
 };
@@ -43,16 +41,14 @@ exports.passport-weibo = {
 ## Configuration
 
 ```js
-// {app_root}/config/config.default.js
-exports.passport-weibo = {
+// config/config.default.js
+exports.passportWeibo = {
+  key: 'your oauth key',
+  secret: 'your oauth secret',
 };
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.
-
-## Example
-
-<!-- example here -->
 
 ## Questions & Suggestions
 
