@@ -5,13 +5,15 @@ const assert = require('assert');
 const Strategy = require('passport-weibo').Strategy;
 
 module.exports = app => {
-  const config = app.config.passport.weibo;
+  const config = app.config.passportWeibo;
   config.passReqToCallback = true;
-  assert(config.clientID, '[egg-passport-weibo] config.passport.weibo.clientID required');
-  assert(config.clientSecret, '[egg-passport-weibo] config.passport.weibo.clientSecret required');
+  assert(config.key, '[egg-passport-weibo] config.passportWeibo.key required');
+  assert(config.secret, '[egg-passport-weibo] config.passportWeibo.secret required');
+  config.clientID = config.key;
+  config.clientSecret = config.secret;
 
   // must require `req` params
-  app.passport.use(new Strategy(config, function(req, accessToken, refreshToken, params, profile, done) {
+  app.passport.use('weibo', new Strategy(config, (req, accessToken, refreshToken, params, profile, done) => {
     // format user
     const user = {
       provider: 'weibo',
