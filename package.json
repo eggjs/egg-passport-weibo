@@ -15,7 +15,7 @@
     "egg-passport"
   ],
   "dependencies": {
-    "debug": "^2.6.1",
+    "debug": "^3.1.0",
     "passport-weibo": "^0.1.2"
   },
   "devDependencies": {
